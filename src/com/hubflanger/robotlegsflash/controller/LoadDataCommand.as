@@ -11,8 +11,8 @@ package com.hubflanger.robotlegsflash.controller
 		
 		override public function execute():void
 		{
-			trace("LoadDataCommand:execute");
-			//dispatch(new MainEvent(MainEvent.FOCUS, employeeLoginService.loggedIn ? IEmployeeList : IEmployeeLogin));
+			//trace("LoadDataCommand:execute");
+			siteDataService.loadData();
 		}
 	}
 }

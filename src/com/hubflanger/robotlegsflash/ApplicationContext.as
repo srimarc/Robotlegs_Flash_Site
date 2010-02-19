@@ -25,11 +25,13 @@ package com.hubflanger.robotlegsflash
 	import com.hubflanger.robotlegsflash.model.SiteModel;
 	import com.hubflanger.robotlegsflash.controller.LoadDataCommand;
 	import com.hubflanger.robotlegsflash.service.*;
+	import com.hubflanger.robotlegsflash.events.SystemEvent;
+	import com.hubflanger.robotlegsflash.view.*;
 	
 	import flash.display.DisplayObjectContainer;
 	
-	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
+	import org.robotlegs.base.ContextEvent;
 	
 	public class ApplicationContext extends Context
 	{
@@ -40,17 +42,18 @@ package com.hubflanger.robotlegsflash
 		
 		override public function startup():void
 		{
-			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadDataCommand, ContextEvent, true);
-//			commandMap.mapEvent(HelloFlashEvent.BALL_CLICKED, CreateBallCommand, HelloFlashEvent );
-
-			// Create a rule for Dependency Injection
 			injector.mapSingleton(SiteModel);
 			
-//			injector.mapSingletonOf(ISiteDataService, SiteDataService);
+			injector.mapClass(ISiteDataService, SiteDataService);
 			
 			// Bind the AppMediator class to RobotLegsFlashSite
-//			mediatorMap.mapView(RobotLegsFlashSite, AppMediator);
+			mediatorMap.mapView(Navigation, NavigationMediator);
+			mediatorMap.mapView(SectionContainer, SectionContainerMediator);
 			
+			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadDataCommand, ContextEvent, true);
+			
+			super.startup();
 		}
+		
 	}
 }
