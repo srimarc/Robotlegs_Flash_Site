@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<header>Welcome to my Robot Legs Site!</header>
+	<sections>
+		<section id="home">
+			<label>Home</label>
+			<content>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque consequat. Nam ut leo vitae metus vehicula posuere. Nullam nunc. Vivamus nec ligula vel tortor molestie elementum. Integer faucibus elementum dolor. Nulla lorem. Quisque varius sodales mi. Nam tincidunt pede. Nam scelerisque nulla a nisl. Mauris at nisi. Nunc ac augue ac tellus adipiscing cursus. Vivamus pulvinar. Ut risus turpis, vulputate tincidunt, consectetuer molestie, scelerisque id, lorem. Integer magna velit, volutpat a, eleifend sed, tristique a, urna. Fusce eu lorem in magna gravida vulputate. Donec molestie. Nunc tempus, tellus a faucibus lacinia, lacus est sodales ante, a aliquet tellus purus in mauris. Integer in elit vitae est cursus pretium.</p>
+			</content>
+		</section>
+		<section id="about">
+			<label>About PureMVC</label>
+			<content>
+				<p>Proin posuere tristique urna. Vestibulum at quam. Etiam vitae ante sit amet diam adipiscing semper. Proin augue diam, ornare nec, aliquet vitae, pulvinar non, eros. Ut luctus cursus tortor. Morbi volutpat tristique nisi. Phasellus pharetra arcu ut eros. Fusce venenatis, purus nec lacinia dapibus, purus sem ultricies nunc, sed sollicitudin lectus dui vitae tortor. Suspendisse lectus. Proin at pede.</p>
+				<p>Aliquam vel urna. Donec id mauris. Sed adipiscing. Integer facilisis porttitor nisi. Curabitur blandit. Morbi leo. In hac habitasse platea dictumst. Donec ac lectus in nunc aliquam pharetra. Cras leo sem, viverra in, semper eget, dapibus eget, metus. Aenean rutrum. Vivamus non quam at felis imperdiet aliquam. In feugiat congue turpis. Fusce pulvinar vestibulum felis. Proin erat leo, imperdiet quis, consequat sit amet, tincidunt vulputate, ligula. In tempor, elit et porta adipiscing, lectus arcu fringilla arcu, in condimentum magna elit a libero. Quisque consectetuer. Duis risus velit, porta non, vulputate ultricies, sagittis eu, quam.</p>
+			</content>
+		</section>
+		<section id="examples">
+			<label>Examples</label>
+			<content>
+				<p>Integer eu pede. Proin nisl erat, sagittis et, faucibus nec, accumsan in, nisi. Vivamus vel justo. Mauris vel risus quis velit vulputate semper. Donec eu ipsum a mauris accumsan ornare. Donec magna urna, fermentum sit amet, lobortis nec, molestie at, felis. Pellentesque varius. Suspendisse tincidunt lobortis libero. Donec faucibus, dolor id rhoncus scelerisque, ligula neque venenatis mi, ac consectetuer elit magna eleifend sem. Vivamus varius, nisl vitae dictum laoreet, lacus diam blandit diam, eu sodales nunc neque quis elit. Vivamus condimentum nisl dignissim quam. Suspendisse odio.</p>
+				<p>Pellentesque vel metus. Aliquam scelerisque accumsan pede. Aliquam sem risus, suscipit at, sodales ut, accumsan eget, odio. In hac habitasse platea dictumst. Vivamus sit amet sapien. Sed venenatis tellus at nunc. Nulla dolor. Aenean ornare ornare purus. Ut ipsum. Proin tempor justo eget sapien.</p>
+			</content>
+		</section>
+	</sections>
+</site>
