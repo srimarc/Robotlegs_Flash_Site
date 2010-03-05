@@ -1,3 +1,10 @@
+/**
+ * Robot Legs Flash Site Demo
+ * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
+ * 
+ * This work is licensed under a Creative Commons Attribution 3.0 United States License.
+ * Some Rights Reserved.
+ */
 package com.hubflanger.robotlegsdemo.view.components
 {
 	import com.hubflanger.robotlegsdemo.model.vo.SectionVO;
@@ -11,14 +18,12 @@ package com.hubflanger.robotlegsdemo.view.components
 		
 		public function Navigation() 
 		{
-			//trace("Navigation:constructor");
 			x = 0;
 			y = 50;
 		}
 		
 		public function init(arr:Array):void
 		{
-			//trace("Navigation:init");
 			sectionsList = arr;
 			var sectionVO:SectionVO;
 			var btn:NavButton;
@@ -37,7 +42,12 @@ package com.hubflanger.robotlegsdemo.view.components
 		
 		public function update(id:String):void
 		{
+			var btn:NavButton;
 			
+			for (var i:uint=0; i<buttonsList.length; i++) {
+				btn = buttonsList[i];
+				btn.update(id);
+			}
 		}
 	}
 }

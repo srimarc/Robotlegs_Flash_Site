@@ -1,4 +1,10 @@
-
+/**
+ * Robot Legs Flash Site Demo
+ * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
+ * 
+ * This work is licensed under a Creative Commons Attribution 3.0 United States License.
+ * Some Rights Reserved.
+ */
 package com.hubflanger.robotlegsdemo
 {
 	import com.hubflanger.robotlegsdemo.model.SiteModel;
@@ -13,27 +19,44 @@ package com.hubflanger.robotlegsdemo
 	import org.robotlegs.mvcs.Context;
 	import org.robotlegs.base.ContextEvent;
 	
+	/**
+	 * The Context for the Robotlegs framework.
+	 */	
 	public class ApplicationContext extends Context
 	{
+		/**
+		 * The constructor. 
+		 * 
+		 * @param contextView An instance of RobotLegsFlashSite as DisplayObjectContainer.
+		 */		
 		public function ApplicationContext(contextView:DisplayObjectContainer)
 		{
 			super(contextView);
 		}
 		
+		/**
+		 * The startup() method is invoked by the framework. Here, we override the method
+		 * to map the Actors for the application. 
+		 */		
 		override public function startup():void
 		{
+			// Map a Singleton of SiteModel
 			injector.mapSingleton(SiteModel);
 			
+			// 
 			injector.mapClass(ISiteDataService, SiteDataService);
 			
+			// Map the Views and Mediators
 			mediatorMap.mapView(Header, HeaderMediator);
 			mediatorMap.mapView(Navigation, NavigationMediator);
 			mediatorMap.mapView(SectionContainer, SectionContainerMediator);
 			
+			// Map the Events and Commands
 			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadDataCommand, ContextEvent, true);
 			commandMap.mapEvent(SystemEvent.INIT_VIEW, InitViewCommand, SystemEvent, true);
 			commandMap.mapEvent(UserEvent.NAV_CLICK, SectionSelectedCommand, UserEvent, false);
 			
+			// Invoke the superclass' startup() method
 			super.startup();
 		}
 		
