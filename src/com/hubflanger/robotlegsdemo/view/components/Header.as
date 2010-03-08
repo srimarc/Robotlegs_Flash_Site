@@ -10,16 +10,21 @@ package com.hubflanger.robotlegsdemo.view.components
 	import flash.display.*;
 	import flash.text.*;
 	
+	/**
+	 * The display container for the header.
+	 */	
 	public class Header extends Sprite
 	{
+		private var label:TextField;
+		
+		/**
+		 * The constructor. 
+		 * <p>
+		 * Creates a Shape object as background and a TextField label.
+		 */		
 		public function Header()
 		{
 			//trace("Header:constructor");
-		}
-		
-		public function init(str:String):void
-		{
-			//trace("Header:init:" + str);
 			var bg:Shape = new Shape();
 			bg.graphics.beginFill(0xBBB082);
 			bg.graphics.drawRect(0, 0, 550, 50);
@@ -33,12 +38,23 @@ package com.hubflanger.robotlegsdemo.view.components
 			tf.bold = true;
 			tf.italic = true;
 			
-			var label:TextField = new TextField();
+			label = new TextField();
 			label.width = 550;
 			label.height = 50;
 			label.defaultTextFormat = tf;
-			label.text = str;
 			addChild(label);
+		}
+		
+		/**
+		 * and
+		 * populates it with a String object.
+		 *
+		 * @param str A String matching the copy for the Header.
+		 */		
+		public function init(str:String):void
+		{
+			//trace("Header:init:" + str);
+			label.text = str;
 		}
 	}
 }

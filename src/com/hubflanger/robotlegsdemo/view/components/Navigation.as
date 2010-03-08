@@ -11,17 +11,29 @@ package com.hubflanger.robotlegsdemo.view.components
 	
 	import flash.display.Sprite;
 	
+	/**
+	 * A display container for the navigation.
+	 */	
 	public class Navigation extends Sprite
 	{
 		private var sectionsList:Array = new Array();
 		private var buttonsList:Array = new Array();
 		
+		/**
+		 * The constructor. 
+		 */		
 		public function Navigation() 
 		{
 			x = 0;
 			y = 50;
 		}
 		
+		/**
+		 * Accepts an Array of <code>SectionVO</code> objects and creates a 
+		 * <code>NavButton</code> instance for each. Stores 
+		 * 
+		 * @param arr An Array of <code>SectionVO</code> objects.
+		 */		
 		public function init(arr:Array):void
 		{
 			sectionsList = arr;
@@ -32,14 +44,20 @@ package com.hubflanger.robotlegsdemo.view.components
 			for (var i:uint=0; i<sectionsList.length; i++) {
 				sectionVO = sectionsList[i];
 				
-				btn = new NavButton(sectionVO.id);
+				btn = new NavButton(sectionVO.id, sectionVO.label);
 				btn.x = xpos;
 				addChild(btn);
 				buttonsList.push(btn);
-				xpos += btn.width;
+				xpos += btn.width + 2;
 			}
 		}
 		
+		/**
+		 * Invoked by the <code>NavigationMediator</code> when a 
+		 * <code>SystemEvent.SECTION_CHANGED</code> event is received.
+		 *  
+		 * @param id The String ID of the Section selected.
+		 */		
 		public function update(id:String):void
 		{
 			var btn:NavButton;

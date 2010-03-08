@@ -9,8 +9,15 @@ package com.hubflanger.robotlegsdemo.events
 {
 	import flash.events.Event;
 	
+	/**
+	 * A custom event for the application.
+	 */	
 	public class UserEvent extends Event
 	{
+		/**
+		 * Dispatched by the <code>NavigationMediator</code> when a 
+		 * <code>NavButton</code> is clicked.
+		 */		
 		public static const NAV_CLICK:String	= "navClick";
 		
 		private var _id:String;

@@ -27,7 +27,8 @@ package com.hubflanger.robotlegsdemo
 		/**
 		 * The constructor. 
 		 * 
-		 * @param contextView An instance of RobotLegsFlashSite as DisplayObjectContainer.
+		 * @param contextView An instance of <code>RobotLegsFlashSite</code> as 
+		 * DisplayObjectContainer.
 		 */		
 		public function ApplicationContext(contextView:DisplayObjectContainer)
 		{
@@ -35,15 +36,15 @@ package com.hubflanger.robotlegsdemo
 		}
 		
 		/**
-		 * The startup() method is invoked by the framework. Here, we override the method
-		 * to map the Actors for the application. 
+		 * The <code>startup()</code> method is automatically invoked by the framework. 
+		 * Here, we override it to map the Actors for the application. 
 		 */		
 		override public function startup():void
 		{
 			// Map a Singleton of SiteModel
 			injector.mapSingleton(SiteModel);
 			
-			// 
+			// Map an instance of SiteDataService
 			injector.mapClass(ISiteDataService, SiteDataService);
 			
 			// Map the Views and Mediators

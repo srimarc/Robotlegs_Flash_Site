@@ -13,6 +13,9 @@ package com.hubflanger.robotlegsdemo.model
 	
 	import org.robotlegs.mvcs.Actor;
 	
+	/**
+	 * A model for the application. 
+	 */	
 	public class SiteModel extends Actor
 	{
 		private var _header:String;

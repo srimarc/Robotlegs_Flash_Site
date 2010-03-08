@@ -11,27 +11,41 @@ package com.hubflanger.robotlegsdemo.view.components
 	import flash.events.*;
 	import flash.text.*;
 	
+	/**
+	 * Creates a button for the <code>Navigation</code> display container.
+	 */	
 	public class NavButton extends Sprite
 	{
-		public static const CLICK:String = "navButtonClick";
-		
 		private var _id:String;
 		private var _onBg:Shape;
 		private var _isSelected:Boolean = false;
 		
-		public function NavButton(str:String)
+		/**
+		 * The constructor.
+		 * <p>
+		 * Creates two Shape objects for the background. One for the "off" state and one 
+		 * for the "selected" or rollover state.
+		 * <p>
+		 * Creates a TextField label for the button.
+		 * <p>
+		 * Accepts a String ID and a String for populating the <code>label</code> TextField.
+		 * 
+		 * @param id A String representing the ID for the button.
+		 * @param labelStr A String representing copy for the button's label.
+		 */		
+		public function NavButton(id:String, labelStr:String)
 		{
-			_id = str;
+			_id = id;
 
 			var bg:Shape = new Shape();
 			bg.graphics.beginFill(0xFFFFFF);
-			bg.graphics.drawRect(0, 0, 183, 30);
+			bg.graphics.drawRect(0, 0, 182, 30);
 			bg.graphics.endFill();
 			addChild(bg);
 			
 			_onBg = new Shape();
 			_onBg.graphics.beginFill(0xF0F0F0);
-			_onBg.graphics.drawRect(0, 0, 183, 30);
+			_onBg.graphics.drawRect(0, 0, 182, 30);
 			_onBg.graphics.endFill();
 			_onBg.alpha = 0;
 			addChild(_onBg);
@@ -49,7 +63,7 @@ package com.hubflanger.robotlegsdemo.view.components
 			label.height = 25;
 			label.autoSize = TextFieldAutoSize.CENTER;
 			label.defaultTextFormat = tf;
-			label.text = str;
+			label.text = labelStr;
 			addChild(label);
 			
 			buttonMode = true;
@@ -71,11 +85,20 @@ package com.hubflanger.robotlegsdemo.view.components
 				_onBg.alpha = 0;
 		}
 		
-		public function update(str:String):void
+		/**
+		 * Invoked by the <code>Navigation</code> parent container when a 
+		 * <code>SystemEvent.SECTION_CHANGED</code> event is received. Sets 
+		 * the <code>_isSelected</code> property to true and the alpha of the 
+		 * <code>_onBg</code> to 1 if the selected Section ID matches that of 
+		 * this <code>NavButton</code> instance.
+		 *  
+		 * @param id The String ID of the Section selected.
+		 */		
+		public function update(id:String):void
 		{
-			if (_id == str) {
+			if (_id == id) {
 				_isSelected = true;
-				_onBg.alpha = 100;
+				_onBg.alpha = 1;
 			} else {
 				_isSelected = false;
 				_onBg.alpha = 0;

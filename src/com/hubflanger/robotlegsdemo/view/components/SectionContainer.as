@@ -13,11 +13,20 @@ package com.hubflanger.robotlegsdemo.view.components
 	import flash.text.*;
 	import flash.utils.Dictionary;
 	
+	/**
+	 * The display container for the section content.
+	 */	
 	public class SectionContainer extends Sprite
 	{
 		private var sectionsHash:Dictionary = new Dictionary();
 		private var textField:TextField;
 		
+		/**
+		 * The constructor. 
+		 * <p>
+		 * Creates a Shape object as background. Creates a TextField 
+		 * for the content copy.
+		 */	
 		public function SectionContainer()
 		{
 			var bg:Shape = new Shape();
@@ -42,11 +51,24 @@ package com.hubflanger.robotlegsdemo.view.components
 			addChild(textField);
 		}
 		
+		/**
+		 * Assigns a Dictionary object to the <code>sectionsHash</code> property.
+		 *  
+		 * @param hash A Dictionary instance containing <code>SectionVO</code>
+		 * objects with Section IDs as key.
+		 */		
 		public function init(hash:Dictionary):void
 		{
 			sectionsHash = hash;
 		}
 		
+		/**
+		 * Retrieves the <code>SectionVO</code> object associated with the 
+		 * Section ID and and populates the <code>textField</code> with the 
+		 * value of its <code>content</code> property.
+		 *
+		 * @param str The String ID of the Section selected.
+		 */
 		public function update(id:String):void
 		{
 			var sectionVO:SectionVO = sectionsHash[id];

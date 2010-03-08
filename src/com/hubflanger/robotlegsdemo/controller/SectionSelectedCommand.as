@@ -12,17 +12,33 @@ package com.hubflanger.robotlegsdemo.controller
 	
 	import org.robotlegs.mvcs.Command;
 	
+	/**
+	 * Responds to the <code>UserEvent.NAV_CLICK</code> event
+	 * dispatched by the <code>NavigationMediator</code>.
+	 */	
 	public class SectionSelectedCommand extends Command
 	{
+		/**
+		 * Inject the <code>SiteModel</code> Singleton.
+		 */	
 		[Inject]
 		public var model:SiteModel;
 		
+		/**
+		 * Inject the <code>UserEvent</code> instance.
+		 */	
 		[Inject]
 		public var event:UserEvent;
 		
+		/**
+		 * If the <code>id</code> property of the custom event is 
+		 * an empty string, set the <code>currentSection</code> property
+		 * of the <code>SiteModel</code> Singleton to the default section
+		 * ID. Otherwise, assign the custom event's ID to the 
+		 * <code>currentSection</code> property.
+		 */		
 		override public function execute():void
 		{
-			//trace("SectionSelectedCommand:execute");
 			if (event.id == "") {
 				model.currentSection = model.defaultSection;
 			} else {
