@@ -32,6 +32,7 @@ package
 		{
 			// Sets the stage to NO_SCALE mode.
 			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.align = StageAlign.TOP_LEFT;
 			
 			// Register the fonts
 			var georgia:Font = new Georgia();
