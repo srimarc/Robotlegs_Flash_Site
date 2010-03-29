@@ -18,12 +18,6 @@ package com.hubflanger.robotlegsdemo.controller
 	public class InitViewCommand extends Command
 	{
 		/**
-		 * Inject the <code>SiteModel</code> Singleton.
-		 */	
-//		[Inject]
-//		public var model:SiteModel;
-		
-		/**
 		 * Creates the view components. In Robotlegs, the mappings in
 		 * the MediatorMap allows a Mediator to be automatically created when its 
 		 * view component is instantiated.

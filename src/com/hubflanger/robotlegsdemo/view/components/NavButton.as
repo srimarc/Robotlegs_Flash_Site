@@ -16,6 +16,8 @@ package com.hubflanger.robotlegsdemo.view.components
 	 */	
 	public class NavButton extends Sprite
 	{
+		public static const CLICK:String = "navButtonClick";
+		
 		private var _id:String;
 		private var _onBg:Shape;
 		private var _isSelected:Boolean = false;
@@ -71,6 +73,7 @@ package com.hubflanger.robotlegsdemo.view.components
 			
 			addEventListener(MouseEvent.MOUSE_OVER, mouseOverHandler);
 			addEventListener(MouseEvent.MOUSE_OUT, mouseOutHandler);
+			addEventListener(MouseEvent.CLICK, mouseClickHandler);
 		}
 		
 		private function mouseOverHandler(event:MouseEvent):void
@@ -83,6 +86,11 @@ package com.hubflanger.robotlegsdemo.view.components
 		{
 			if (!_isSelected) 
 				_onBg.alpha = 0;
+		}
+		
+		private function mouseClickHandler(event:MouseEvent):void
+		{
+			dispatchEvent(new Event(CLICK, true));
 		}
 		
 		/**

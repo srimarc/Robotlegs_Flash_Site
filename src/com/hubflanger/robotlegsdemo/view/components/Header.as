@@ -24,7 +24,6 @@ package com.hubflanger.robotlegsdemo.view.components
 		 */		
 		public function Header()
 		{
-			//trace("Header:constructor");
 			var bg:Shape = new Shape();
 			bg.graphics.beginFill(0xBBB082);
 			bg.graphics.drawRect(0, 0, 550, 50);
@@ -53,7 +52,6 @@ package com.hubflanger.robotlegsdemo.view.components
 		 */		
 		public function init(str:String):void
 		{
-			//trace("Header:init:" + str);
 			label.text = str;
 		}
 	}

@@ -1,5 +1,5 @@
 /**
- * Robot Legs Flash Site Demo
+ * Robotlegs Flash Site Demo
  * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
  * 
  * This work is licensed under a Creative Commons Attribution 3.0 United States License.
@@ -34,7 +34,7 @@ package com.hubflanger.robotlegsdemo.view
 		 */		
 		public function HeaderMediator()
 		{
-			//trace("HeaderMediator:constructor");
+			//
 		}
 		
 		/**
@@ -44,7 +44,6 @@ package com.hubflanger.robotlegsdemo.view
 		 */		
 		override public function onRegister():void
 		{
-			//trace("HeaderMediator:onRegister:" + model.header);
 			header.init(model.header);
 		}
 	}

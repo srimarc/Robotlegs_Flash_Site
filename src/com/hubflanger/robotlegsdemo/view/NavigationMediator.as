@@ -1,5 +1,5 @@
 /**
- * Robot Legs Flash Site Demo
+ * Robotlegs Flash Site Demo
  * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
  * 
  * This work is licensed under a Creative Commons Attribution 3.0 United States License.
@@ -42,37 +42,35 @@ package com.hubflanger.robotlegsdemo.view
 		}
 		
 		/**
-		 * Override the onRegister() method. Invokes the <code>init</code> method 
-		 * of the <code>Navigation</code> instance and passes the 
-		 * <code>sectionsList</code> property of the <code>SiteModel</code> instance. 
-		 * <p>
-		 * Maps listeners to the <code>SystemEvent.SECTION_CHANGED</code> and 
-		 * the <code>NavButton.CLICK</code> events.
-		 * <p>
-		 * Dispatches a <code>UserEvent.NAV_CLICK</code> event to initiate display 
-		 * of the default section content.
+		 * Override the onRegister() method to perform setup tasks on the
+		 * view component when the Mediator is registered with the framework.
 		 */	
 		override public function onRegister():void
 		{
+			// Invokes the view component's init() method and passes the 
+			// SiteModel's sectionsList property.
 			nav.init(model.sectionsList);
 			
+			// Maps listeners to the SystemEvent.SECTION_CHANGED and 
+		 	// the NavButton.CLICK events.
 			eventMap.mapListener(eventDispatcher, SystemEvent.SECTION_CHANGED, sectionChangeHandler);
-			eventMap.mapListener(nav, MouseEvent.CLICK, navClickHandler);
+			eventMap.mapListener(nav, NavButton.CLICK, navClickHandler);
 			
+			// Dispatches a UserEvent.NAV_CLICK event to initiate display 
+			// of the default section content.
 			dispatch(new UserEvent(UserEvent.NAV_CLICK, ""));
 		}
 		
 		/**
 		 * Handler for the <code>NavButton.CLICK</code> event dispatched
 		 * when a <code>NavButton</code> instance is clicked.
-		 * 
-		 * @param event An Event instance.
 		 */		
-		private function navClickHandler(event:MouseEvent):void
+		private function navClickHandler(event:Event):void
 		{
 			event.stopPropagation();
 			var btn:NavButton = event.target as NavButton;
 			
+			// Sends a UserEvent.NAV_CLICK framework event 
 			if (!btn.isSelected) 
 				dispatch(new UserEvent(UserEvent.NAV_CLICK, btn.id));
 		}
@@ -83,8 +81,6 @@ package com.hubflanger.robotlegsdemo.view
 		 * Invokes the <code>update()</code> method of the <code>Navigation</code>
 		 * view component passing the <code>currentSection</code> property of the
 		 * <code>SiteModel</code> Singleton.
-		 * 
-		 * @param event A <code>SystemEvent</code> instance.
 		 */		
 		private function sectionChangeHandler(event:SystemEvent):void
 		{
