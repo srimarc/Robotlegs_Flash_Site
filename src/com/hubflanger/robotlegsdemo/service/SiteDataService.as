@@ -45,19 +45,14 @@ package com.hubflanger.robotlegsdemo.service
 		
 		/**
 		 * Handler for the URLLoader's Event.COMPLETE event.
-		 * <p>
-		 * Parses the xml data and stores the <code>SectionVO</code> objects in 
-		 * the <code>SiteModel</code> Singleton.
-		 * <p>
-		 * Dispatches a <code>SystemEvent.INIT_VIEW</code> event.
-		 * 
-		 * @param event
 		 */		
 		private function loadCompleteHandler(event:Event):void 
 		{
 			var loader:URLLoader = event.target as URLLoader;
 			loader.removeEventListener(Event.COMPLETE, loadCompleteHandler);
 
+			// Parses the xml data and stores the SectionVO objects in 
+		 	// the SiteModel Singleton.
 			var xml:XML = new XML(event.target.data);
 			model.header = xml.header.text();
 			
@@ -74,6 +69,7 @@ package com.hubflanger.robotlegsdemo.service
 			
 			model.defaultSection = model.sectionsList[0].id;
 			
+			// Dispatches a SystemEvent.INIT_VIEW event.
 			dispatch(new SystemEvent(SystemEvent.INIT_VIEW, false));
 		}
 	}

@@ -20,12 +20,11 @@ package com.hubflanger.robotlegsdemo.controller
 		/**
 		 * Inject the <code>SiteModel</code> Singleton.
 		 */	
-		[Inject]
-		public var model:SiteModel;
+//		[Inject]
+//		public var model:SiteModel;
 		
 		/**
-		 * Creates the <code>SectionContainer</code>, <code>Header</code> 
-		 * and <code>Navigation</code> view components. In Robotlegs, the mappings in
+		 * Creates the view components. In Robotlegs, the mappings in
 		 * the MediatorMap allows a Mediator to be automatically created when its 
 		 * view component is instantiated.
 		 */		
