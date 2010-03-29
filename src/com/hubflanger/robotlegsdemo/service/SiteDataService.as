@@ -1,5 +1,5 @@
 /**
- * Robot Legs Flash Site Demo
+ * Robotlegs Flash Site Demo
  * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
  * 
  * This work is licensed under a Creative Commons Attribution 3.0 United States License.
@@ -16,8 +16,14 @@ package com.hubflanger.robotlegsdemo.service
 	
 	import org.robotlegs.mvcs.Actor;
 		
+	/**
+	 * A Service class that handles loading and parsing of the site's xml data.
+	 */	
 	public class SiteDataService extends Actor implements ISiteDataService
 	{
+		/**
+		 * Inject the <code>SiteModel</code> Singleton.
+		 */		
 		[Inject]
 		public var model:SiteModel;
 
@@ -26,6 +32,9 @@ package com.hubflanger.robotlegsdemo.service
 			//
 		}
 		
+		/**
+		 * Loads the data.xml file using a URLLoader instance.
+		 */		
 		public function loadData():void 
 		{
 			//trace("SiteDataService:loadData");
@@ -34,6 +43,16 @@ package com.hubflanger.robotlegsdemo.service
 			loader.load(new URLRequest("assets/data.xml"));
 		}
 		
+		/**
+		 * Handler for the URLLoader's Event.COMPLETE event.
+		 * <p>
+		 * Parses the xml data and stores the <code>SectionVO</code> objects in 
+		 * the <code>SiteModel</code> Singleton.
+		 * <p>
+		 * Dispatches a <code>SystemEvent.INIT_VIEW</code> event.
+		 * 
+		 * @param event
+		 */		
 		private function loadCompleteHandler(event:Event):void 
 		{
 			var loader:URLLoader = event.target as URLLoader;

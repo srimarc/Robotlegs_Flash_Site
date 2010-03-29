@@ -1,5 +1,5 @@
 /**
- * Robot Legs Flash Site Demo
+ * Robotlegs Flash Site Demo
  * Copyright (c) 2010 Yee Peng Chia <peng@hubflanger.com>
  * 
  * This work is licensed under a Creative Commons Attribution 3.0 United States License.
@@ -23,12 +23,14 @@ package com.hubflanger.robotlegsdemo
 	 * The Context for the Robotlegs framework.
 	 */	
 	public class ApplicationContext extends Context
-	{
+	{	
 		/**
-		 * The constructor. 
-		 * 
-		 * @param contextView An instance of <code>RobotLegsFlashSite</code> as 
-		 * DisplayObjectContainer.
+		 * The constructor.
+		 * <p>
+		 * We invoke the super constructor here passing along the application's 
+		 * main display container as the contextView.
+		 *  
+		 * @param contextView
 		 */		
 		public function ApplicationContext(contextView:DisplayObjectContainer)
 		{
