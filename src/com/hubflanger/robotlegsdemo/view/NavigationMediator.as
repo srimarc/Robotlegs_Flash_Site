@@ -58,7 +58,7 @@ package com.hubflanger.robotlegsdemo.view
 			
 			// Dispatches a UserEvent.NAV_CLICK event to initiate display 
 			// of the default section content.
-			dispatch(new UserEvent(UserEvent.NAV_CLICK, ""));
+			dispatch(new UserEvent(UserEvent.NAV_CLICK, model.defaultSection));
 		}
 		
 		/**

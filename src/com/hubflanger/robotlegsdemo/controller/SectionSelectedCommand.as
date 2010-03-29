@@ -39,11 +39,7 @@ package com.hubflanger.robotlegsdemo.controller
 		 */		
 		override public function execute():void
 		{
-			if (event.id == "") {
-				model.currentSection = model.defaultSection;
-			} else {
-				model.currentSection = event.id;
-			}
+			model.currentSection = event.id;
 		}
 	}
 }
